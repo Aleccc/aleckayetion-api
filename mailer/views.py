@@ -16,7 +16,8 @@ def send(request):
         except mail.BadHeaderError:
             content = {'message': 'BadHeaderError'}
             return Response(content, status=status.HTTP_400_BAD_REQUEST)
-    content = {'message': 'no subject/body'}
+    content = {'message': 'no subject/body',
+              'data': request.data}
     return Response(content, status=status.HTTP_400_BAD_REQUEST)
 
 
