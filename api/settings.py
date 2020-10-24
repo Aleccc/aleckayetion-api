@@ -13,6 +13,8 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+import django_heroku
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -81,7 +83,6 @@ WSGI_APPLICATION = 'api.wsgi.application'
 DATABASES = {}
 
 
-
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -119,6 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 # Email Backend
@@ -154,6 +156,6 @@ except ImportError:
 
 
 # Activate Django-Heroku
-# if not DEBUG:
-#     django_heroku.settings(locals())
+if not DEBUG:
+    django_heroku.settings(locals())
 
