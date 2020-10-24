@@ -6,8 +6,8 @@ from rest_framework.decorators import api_view
 
 @api_view(['POST', ])
 def send(request):
-    subject = request.POST.get('subject', '')
-    body = request.POST.get('body', '')
+    subject = request.data.get('subject', '')
+    body = request.data.get('body', '')
     if subject and body:
         try:
             mail.send_mail(subject, body, 'alec@aleckayetion.com', ['alec@aleckayetion.com'])
