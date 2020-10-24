@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+import dj_database_url
 import django_heroku
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('SECRET_KEY', False)
+DEBUG = os.environ.get('DEBUG', False)
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', ]
 
@@ -158,4 +159,3 @@ except ImportError:
 # Activate Django-Heroku
 if not DEBUG:
     django_heroku.settings(locals())
-
