@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'aleckayetion-api.herokuapp.com']
 
 INSTALLED_APPS = [
     'mailer',
+    'recaptcha_ak',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

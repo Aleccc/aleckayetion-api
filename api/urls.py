@@ -18,6 +18,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('mailer/', include('mailer.urls')),
+    path('recaptcha/', include('recaptcha_ak.urls')),
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
 ]
