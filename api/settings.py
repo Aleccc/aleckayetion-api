@@ -150,6 +150,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 #     "http://127.0.0.1:8000"
 # ]
 
+RECAPTCHA_SECRET_KEY = os.environ.get('RECAPTCHA_SECRET_KEY', '')
 
 # Local Settings
 try:
