@@ -41,6 +41,11 @@ DOMAIN_REDIRECTS = [
 
 ALLOWED_HOSTS = [DOMAIN] + DOMAIN_ALIASES + DOMAIN_REDIRECTS
 
+# Redirect to HTTPS by default, unless explicitly disabled
+SECURE_SSL_REDIRECT = os.environ.get('SECURE_SSL_REDIRECT') != 'False'
+if SECURE_SSL_REDIRECT:
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 # Application definition
 
 INSTALLED_APPS = [
